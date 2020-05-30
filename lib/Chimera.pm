@@ -81,7 +81,7 @@ sub print{
 	print join("\t",'total_chimeras', scalar(@{$self->{'chimera'}})),$/;
 	print join(",",'chimera_comp:', (map{$_->Get('type')}  @{$self->{'chimera'}})),$/;
 }
-sub DiscordantSameStrand{ #validate this functions
+sub DiscordantSameStrand{ 
 	my $self = shift;
 	my $vf = $self->{'virus'}->[1];
 	my $hf = $self->{'host'}->[1];
@@ -90,12 +90,11 @@ sub DiscordantSameStrand{ #validate this functions
 	$ss |= 0;
 	return $ss;
 }
-sub DiscordantOrder{ # validate this function
+sub DiscordantOrder{ 
 	my $self = shift;
 	my @rs = split '', $self->{'read_strands'};
 	my $hf = $self->{'host'}->[1];
 	my $hs = ($hf & 128) && 1;
-	#hf & 128 is true if host read is second, hf & 16 is if read was complemented to map
 	return $ORIENTATION[($hf & 128) xor (($hf & 16) xor ($rs[$hs] eq 'r'))];
 }
 sub newBlast{
@@ -233,9 +232,6 @@ sub Distance{
 	my $self = shift;
 	my $chimera = shift;
 	my $key = shift;
-	#print join("\t",($chimera->Get($key)->[0] - $self->{$key}[1]),$self->OutArray,$chimera->OutArray),$/;
-	#return 0 if $chimera->Get($key)->[0] == $self->{$key}[0] && $chimera->Get($key)->[1] == $self->{$key}[1];
-	#return $chimera->Get($key)->[0] - $self->{$key}[1]; # not sure why i originally did this comparison
 	return $chimera->Get($key)->[0] - $self->{$key}[0];
 }
 sub Where{

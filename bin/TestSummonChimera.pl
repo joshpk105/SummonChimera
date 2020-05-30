@@ -1,6 +1,7 @@
 use strict;
 use warnings;
 
+print "Warning: This test file only works on linux-like environments, with sort, diff, and rm installed."
 my $sc = `SummonChimera.pl -d 500 -v 'gi|418489681|ref|NC_019488.1|' -b ../Data/Salmonella.chimeras.blast.txt > ../Data/temp.txt`;
 die "SummonChimera not installed correctly\n$sc" if $?;
 

@@ -49,7 +49,7 @@ it under the conditions outlined in the terms of the GNU General Public Licenses
 as published by the Free Software Foundation either version 3 or later.
 GNU General Public License version 3 is provided with this program as LICENSE.txt
 
-SummonChimera version 1.0 by Joshua Patrick Katz joshpk105\@gmail.com
+SummonChimera version 1.0 by Joshua Patrick Katz
 Usage:
 	SummonChimera.pl [options]* -s|sam <sam> -b|blast <blast> -v|virus <virus>
 
